@@ -1,3 +1,6 @@
+var platforms;
+var players;
+
 var SceneOne = new Phaser.Class({
     Extends: Phaser.Scene,
     initialize: function() {
@@ -15,7 +18,7 @@ var SceneOne = new Phaser.Class({
     },
     create: function() {
         this.add.image(400, 300, 'sky');
-        var platforms;
+
         platforms = this.physics.add.staticGroup();
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
@@ -23,7 +26,7 @@ var SceneOne = new Phaser.Class({
         platforms.create(600, 400, 'ground');
         platforms.create(50, 250, 'ground');
         platforms.create(750, 220, 'ground');
-        var player;
+        
         player = this.physics.add.sprite(100, 450, 'dude');
         player.setScale(0.2);
         player.setBounce(0.2);
