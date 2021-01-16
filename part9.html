@@ -45,7 +45,8 @@
     {
         this.load.image('sky', 'assets/sky.png');
         this.load.image('ground', 'assets/platform.png');
-        this.load.image('star', 'assets/star.png');
+        //this.load.image('star', 'assets/star.png');
+        this.load.image('star', 'assets/squirrel.png');
         this.load.image('bomb', 'assets/bomb.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
@@ -93,7 +94,7 @@
         stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
-            setXY: { x: 12, y: 0, stepX: 70 }
+            setXY: { x: 12, y: 0, stepX: 200 }
         });
 
         stars.children.iterate(function (child) {
@@ -103,6 +104,8 @@
         });
 
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        
+        
 
         this.physics.add.collider(player, platforms);
         this.physics.add.collider(stars, platforms);
