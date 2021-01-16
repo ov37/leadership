@@ -24,7 +24,7 @@ var SceneOne = new Phaser.Class({
     create: function() {
        this.add.image(400, 300, 'sky');
 
-        platforms = this.physics.add.staticGroup();
+        var platforms = this.physics.add.staticGroup();
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
