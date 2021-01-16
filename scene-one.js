@@ -16,7 +16,7 @@ var SceneOne = new Phaser.Class({
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
     },
-    create: function() {
+    create: function(platforms) {
         this.add.image(400, 300, 'sky');
 
         platforms = this.physics.add.staticGroup();
