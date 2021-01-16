@@ -1,5 +1,4 @@
 var platforms;
-var players;
 
 var SceneOne = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -16,10 +15,10 @@ var SceneOne = new Phaser.Class({
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
     },
-    create: function(platforms) {
+    create: function() {
         this.add.image(400, 300, 'sky');
 
-        platforms = this.physics.add.staticGroup();
+        this.platforms = this.physics.add.staticGroup();
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
