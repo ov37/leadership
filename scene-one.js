@@ -1,3 +1,11 @@
+ var player;
+    var stars;
+    var platforms;
+    var cursors;
+    var score = 0;
+    var scoreText;
+
+
 var SceneOne = new Phaser.Class({
     Extends: Phaser.Scene,
     initialize: function() {
