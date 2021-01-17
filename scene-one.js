@@ -44,7 +44,7 @@ var SceneOne = new Phaser.Class({
         });
         
         this.physics.add.collider(player, platforms);
-        
+        /*
         var text = this.add.text(
             250, 
             50, 
@@ -65,9 +65,9 @@ var SceneOne = new Phaser.Class({
                 fontStyle: "bold"
             }
         );
+        */
         
-        
-        var text3 = this.add.rexBBCodeText(50, 500, "[b]h[/b]ello");
+        var text3 = this.add.rexBBCodeText(50, 500, '[b]h[/b]ello');
         
         
         player.setVelocityX(100);
