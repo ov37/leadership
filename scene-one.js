@@ -72,7 +72,7 @@ var SceneOne = new Phaser.Class({
         this.add.rexBBCodeText(50, 200, s2, {
             fontSize: '25px',
             wrap: {
-                mode: 'word'     // 0|'none'|1|'word'|2|'char'|'character'
+                mode: 'word',
                 width: 300
             }
         })
