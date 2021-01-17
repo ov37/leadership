@@ -5,9 +5,9 @@ var TitleScene = new Phaser.Class({
     },
     init: function() {},
     preload: function() {
-        this.load.image("top", "owens.png");
-        this.load.image("middle", "leadership.png");
-        this.load.image("bottom", "portfolio.png");
+        this.load.image("top", "assets/owens.png");
+        this.load.image("middle", "assets/leadership.png");
+        this.load.image("bottom", "assets/portfolio.png");
     },
     create: function() {
         this.top = this.add.image(400, 200, "top");
