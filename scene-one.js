@@ -9,12 +9,8 @@ var SceneOne = new Phaser.Class({
     preload: function() {
         this.load.image('ground', 'assets/platform.png');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
-        /*
-        var url;
-  
-         url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js';
+        scene.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
 
-        this.load.plugin('rexbbcodetextplugin', url, true);*/
     },
     create: function() {
         
