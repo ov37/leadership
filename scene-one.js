@@ -67,14 +67,10 @@ var SceneOne = new Phaser.Class({
             }
         );
         
-        var s2 = `[color=red]red[/color]
-            [color=blue]blue[/color]
-[color=green]green[/color]
-Last line`;
+        var s2 = `Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start... I heard about this [color=blue]Cornell Engineering Leadership Certification Program[/color] - Do you think that is a good place to start?`;
 
-        this.add.rexBBCodeText(400, 30, s2, {
-            backgroundColor: '#555',
-            fontSize: '30px',
+        this.add.rexBBCodeText(50, 400, s2, {
+            fontSize: '25px',
         })
         
         
