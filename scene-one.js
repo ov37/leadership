@@ -122,14 +122,16 @@ var SceneOne = new Phaser.Class({
                 
             }
             
-            this.time.addEvent({
+            
+        })
+        
+        this.time.addEvent({
                 delay: 23000,
                 loop: false,
                 callback: () => {
                     this.scene.start("SceneTwo");
                 }
             })
-        })
         
     },
     update: function() {}
