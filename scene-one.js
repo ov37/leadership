@@ -78,6 +78,8 @@ var SceneOne = new Phaser.Class({
 
         this.physics.add.collider(player, platforms);
         this.physics.add.collider(stars, platforms);
+        
+        this.physics.add.overlap(player, stars, collectStar, null, this);
     },
     update: function() {
          if (cursors.left.isDown)
@@ -103,5 +105,13 @@ var SceneOne = new Phaser.Class({
         {
             player.setVelocityY(-330);
         }
+    },
+    
+    collectStar: function() (player, star)
+    {
+        star.disableBody(true, true);
+
+        score += 10;
+        scoreText.setText('Score: ' + score);
     }
 });
