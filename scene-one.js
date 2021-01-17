@@ -1,4 +1,9 @@
-var platforms;
+    var player;
+    var stars;
+    var platforms;
+    var cursors;
+    var score = 0;
+    var scoreText;
 
 var SceneOne = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -31,5 +36,30 @@ var SceneOne = new Phaser.Class({
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
     },
-    update: function() {}
+    update: function() {
+         if (cursors.left.isDown)
+        {
+            player.setVelocityX(-160);
+
+            player.anims.play('left', true);
+        }
+        else if (cursors.right.isDown)
+        {
+            player.setVelocityX(160);
+
+            player.anims.play('right', true);
+        }
+        else
+        {
+            player.setVelocityX(0);
+
+            player.anims.play('turn');
+        }
+
+        if (cursors.up.isDown && player.body.touching.down)
+        {
+            player.setVelocityY(-330);
+        }
+    }
+    }
 });
