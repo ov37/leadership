@@ -107,8 +107,7 @@ var SceneOne = new Phaser.Class({
         }
     },
     
-    collectStar: function(player, star)
-    {
+    collectStar: function(){
         star.disableBody(true, true);
 
         score += 10;
