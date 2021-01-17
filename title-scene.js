@@ -13,7 +13,7 @@ var TitleScene = new Phaser.Class({
             delay: 3000,
             loop: false,
             callback: () => {
-                this.scene.start("SceneTwo");
+                this.scene.start("SceneOne");
             }
         })
     },
