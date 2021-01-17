@@ -67,7 +67,7 @@ var SceneOne = new Phaser.Class({
         );
         
         
-        var text3 = this.add.rexBBCodeText(50, 300, '[b]h[/b]ello');
+        var text3 = this.add.rexBBCodeText(50, 500, "[b]h[/b]ello");
         
         
         player.setVelocityX(100);
