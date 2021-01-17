@@ -116,6 +116,10 @@ var SceneOne = new Phaser.Class({
                 }
             })
                 
+            player.setVelocityX(100);
+
+            player.anims.play('right', true);
+                
             }
         })
         
