@@ -14,7 +14,7 @@ var SceneOne = new Phaser.Class({
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         
-        player = this.physics.add.sprite(-50, 450, 'dude');
+        player = this.physics.add.sprite(-50, 490, 'dude');
         player.setScale(0.2);
         player.setBounce(0.2);
         player.setCollideWorldBounds(false);
@@ -52,10 +52,25 @@ var SceneOne = new Phaser.Class({
             }
         );//.setOrigin(0.5);
         
-        player.setVelocityX(160);
+        player.setVelocityX(100);
 
         player.anims.play('right', true);
+        
+         this.time.addEvent({
+            delay: 2000,
+            loop: false,
+            callback: pauseAnim;
+            }
+        })
         
     },
     update: function() {}
 });
+
+
+function pauseAnim (player)
+    {
+        player.setVelocityX(0);
+
+        player.anims.play('turn');
+    }
