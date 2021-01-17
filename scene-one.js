@@ -84,13 +84,13 @@ var SceneOne = new Phaser.Class({
         })
         
         this.time.addEvent({
-            delay: 18000,
+            delay: 15000,
             loop: false,
             callback: () => {
                 
                 var s3 = `[color=green][b]Yes?[/b][/color]`;
 
-            this.add.rexBBCodeText(50, 450, s3, {
+            this.add.rexBBCodeText(50, 350, s3, {
                 fontSize: '25px',
                 wrap: {
                     mode: 'word',
@@ -102,13 +102,13 @@ var SceneOne = new Phaser.Class({
         })
         
         this.time.addEvent({
-            delay: 20000,
+            delay: 16000,
             loop: false,
             callback: () => {
                 
                 var s4 = `Great! Lets get started.`;
 
-            this.add.rexBBCodeText(50, 480, s4, {
+            this.add.rexBBCodeText(50,380, s4, {
                 fontSize: '25px',
                 wrap: {
                     mode: 'word',
