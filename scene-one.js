@@ -84,7 +84,7 @@ var SceneOne = new Phaser.Class({
         })
         
         this.time.addEvent({
-            delay: 15000,
+            delay: 14000,
             loop: false,
             callback: () => {
                 
@@ -102,7 +102,7 @@ var SceneOne = new Phaser.Class({
         })
         
         this.time.addEvent({
-            delay: 16000,
+            delay: 15000,
             loop: false,
             callback: () => {
                 
@@ -126,7 +126,7 @@ var SceneOne = new Phaser.Class({
         })
         
         this.time.addEvent({
-                delay: 23000,
+                delay: 22000,
                 loop: false,
                 callback: () => {
                     this.scene.start("SceneTwo");
