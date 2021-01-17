@@ -9,12 +9,12 @@ var SceneOne = new Phaser.Class({
     preload: function() {
         this.load.image('ground', 'assets/platform.png');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
-        
+        /*
         var url;
   
          url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js';
 
-        this.load.plugin('rexbbcodetextplugin', url, true);
+        this.load.plugin('rexbbcodetextplugin', url, true);*/
     },
     create: function() {
         
@@ -70,8 +70,8 @@ var SceneOne = new Phaser.Class({
             }
         );
         
-        var s1 = '123456[color=blue]AA[/color]\nBB';
-        var text3 = this.add.rexBBCodeText(50, 300, s1);
+        //var s1 = '123456[color=blue]AA[/color]\nBB';
+        //var text3 = this.add.rexBBCodeText(50, 300, s1);
         
         
         player.setVelocityX(100);
