@@ -51,6 +51,11 @@ var SceneOne = new Phaser.Class({
                 fontStyle: "bold"
             }
         );//.setOrigin(0.5);
+        
+        player.setVelocityX(160);
+
+        player.anims.play('right', true);
+        
     },
     update: function() {}
 });
