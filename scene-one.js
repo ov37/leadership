@@ -67,13 +67,13 @@ var SceneOne = new Phaser.Class({
             }
         );
         */
-        var s2 = `Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start... I heard about this [color=blue]Cornell Engineering Leadership Certification Program[/color] - Do you think that is a good place to start?`;
+        var s2 = `Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start... I heard about this [color=blue][b]Cornell Engineering Leadership Certification Program[/b][/color] - Do you think that is a good place to start?`;
 
-        this.add.rexBBCodeText(50, 200, s2, {
+        this.add.rexBBCodeText(50, 150, s2, {
             fontSize: '25px',
             wrap: {
                 mode: 'word',
-                width: 300
+                width: 700
             }
         })
         
