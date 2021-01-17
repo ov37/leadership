@@ -56,18 +56,6 @@ var SceneOne = new Phaser.Class({
             }
         );
         
-       /* var text2 = this.add.text(
-            50, 
-            200, 
-            "Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start...\n\nI heard about this Cornell Engineering Leadership Certification Program - Do you think that is a good place to start?", 
-            {
-                fontSize: 25,
-                color: "#ffffff",
-                fontStyle: "bold"
-            }
-        );
-        */
-        
         
         
         
@@ -96,13 +84,13 @@ var SceneOne = new Phaser.Class({
         })
         
         this.time.addEvent({
-            delay: 6000,
+            delay: 18000,
             loop: false,
             callback: () => {
                 
-                var s3 = `[color=green][b]Yes?[/b][/color]?`;
+                var s3 = `[color=green][b]Yes?[/b][/color]`;
 
-            this.add.rexBBCodeText(50, 550, s3, {
+            this.add.rexBBCodeText(50, 450, s3, {
                 fontSize: '25px',
                 wrap: {
                     mode: 'word',
@@ -114,13 +102,13 @@ var SceneOne = new Phaser.Class({
         })
         
         this.time.addEvent({
-            delay: 7000,
+            delay: 20000,
             loop: false,
             callback: () => {
                 
-                var s4 = `Great! Lets get started.?`;
+                var s4 = `Great! Lets get started.`;
 
-            this.add.rexBBCodeText(50, 650, s4, {
+            this.add.rexBBCodeText(50, 480, s4, {
                 fontSize: '25px',
                 wrap: {
                     mode: 'word',
