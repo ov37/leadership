@@ -60,7 +60,6 @@ var SceneOne = new Phaser.Class({
             delay: 2000,
             loop: false,
             callback: pauseAnim
-            }
         })
         
     },
