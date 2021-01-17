@@ -121,6 +121,14 @@ var SceneOne = new Phaser.Class({
             player.anims.play('right', true);
                 
             }
+            
+            this.time.addEvent({
+                delay: 23000,
+                loop: false,
+                callback: () => {
+                    this.scene.start("SceneTwo");
+                }
+            })
         })
         
     },
