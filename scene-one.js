@@ -56,7 +56,7 @@ var SceneOne = new Phaser.Class({
             }
         );
         
-        var text2 = this.add.text(
+       /* var text2 = this.add.text(
             50, 
             200, 
             "Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start...\n\nI heard about this Cornell Engineering Leadership Certification Program - Do you think that is a good place to start?", 
@@ -66,11 +66,15 @@ var SceneOne = new Phaser.Class({
                 fontStyle: "bold"
             }
         );
-        
+        */
         var s2 = `Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start... I heard about this [color=blue]Cornell Engineering Leadership Certification Program[/color] - Do you think that is a good place to start?`;
 
-        this.add.rexBBCodeText(50, 400, s2, {
+        this.add.rexBBCodeText(50, 200, s2, {
             fontSize: '25px',
+            wrap: {
+                mode: 'word'     // 0|'none'|1|'word'|2|'char'|'character'
+                width: 300
+            }
         })
         
         
