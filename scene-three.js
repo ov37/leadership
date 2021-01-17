@@ -5,10 +5,10 @@ var player;
     var score = 0;
     var scoreText;
 
-var SceneTwo = new Phaser.Class({
+var SceneThree = new Phaser.Class({
     Extends: Phaser.Scene,
     initialize: function() {
-        Phaser.Scene.call(this, { "key": "SceneTwo" });
+        Phaser.Scene.call(this, { "key": "SceneThree" });
     },
     init: function() {},
     preload: function() {
