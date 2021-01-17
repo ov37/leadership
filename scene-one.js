@@ -1,19 +1,3 @@
-   var config = {
-                type: Phaser.AUTO,
-                parent: "game",
-                width: 800,
-                height: 600,
-                backgroundColor: "#5DACD8",
-                physics: {
-                    default: 'arcade',
-                    arcade: {
-                        gravity: { y: 300 },
-                        debug: false
-                    }
-                }
-            };
-
-
 var player;
     var stars;
     var platforms;
@@ -73,6 +57,27 @@ var SceneOne = new Phaser.Class({
         });
 
         cursors = this.input.keyboard.createCursorKeys();
+       
+       stars = this.physics.add.group({
+            key: 'star',
+            repeat: 11,
+            setXY: { x: 12, y: 0, stepX: 200 },
+            setScale: { x: .05, y: .05 }
+        });
+
+           
+        stars.children.iterate(function (child) {
+
+            child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+
+        });
+
+        scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        
+        
+
+        this.physics.add.collider(player, platforms);
+        this.physics.add.collider(stars, platforms);
     },
     update: function() {
          if (cursors.left.isDown)
