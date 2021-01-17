@@ -107,7 +107,7 @@ var SceneOne = new Phaser.Class({
         }
     },
     
-    collectStar: function() (player, star)
+    collectStar: function(player, star)
     {
         star.disableBody(true, true);
 
