@@ -67,15 +67,7 @@ var SceneOne = new Phaser.Class({
             }
         );
         */
-        var s2 = `Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start... I heard about this [color=blue][b]Cornell Engineering Leadership Certification Program[/b][/color] - Do you think that is a good place to start?`;
-
-        this.add.rexBBCodeText(50, 150, s2, {
-            fontSize: '25px',
-            wrap: {
-                mode: 'word',
-                width: 700
-            }
-        })
+        
         
         
         
@@ -90,6 +82,52 @@ var SceneOne = new Phaser.Class({
                 player.setVelocityX(0);
 
                 player.anims.play('turn');
+                
+                var s2 = `Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start... I heard about this [color=blue][b]Cornell Engineering Leadership Certification Program[/b][/color] - Do you think that is a good place to start?`;
+
+        this.add.rexBBCodeText(50, 150, s2, {
+            fontSize: '25px',
+            wrap: {
+                mode: 'word',
+                width: 700
+            }
+        })
+            }
+        })
+        
+        this.time.addEvent({
+            delay: 6000,
+            loop: false,
+            callback: () => {
+                
+                var s3 = `[color=green][b]Yes?[/b][/color]?`;
+
+            this.add.rexBBCodeText(50, 550, s3, {
+                fontSize: '25px',
+                wrap: {
+                    mode: 'word',
+                    width: 700
+                }
+            })
+                
+            }
+        })
+        
+        this.time.addEvent({
+            delay: 7000,
+            loop: false,
+            callback: () => {
+                
+                var s4 = `Great! Lets get started.?`;
+
+            this.add.rexBBCodeText(50, 650, s4, {
+                fontSize: '25px',
+                wrap: {
+                    mode: 'word',
+                    width: 700
+                }
+            })
+                
             }
         })
         
