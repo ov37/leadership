@@ -14,10 +14,10 @@ var SceneOne = new Phaser.Class({
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         
-        player = this.physics.add.sprite(100, 450, 'dude');
+        player = this.physics.add.sprite(-50, 450, 'dude');
         player.setScale(0.2);
         player.setBounce(0.2);
-        player.setCollideWorldBounds(true);
+        player.setCollideWorldBounds(false);
         
         this.anims.create({
             key: 'left',
