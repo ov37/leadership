@@ -61,5 +61,4 @@ var SceneOne = new Phaser.Class({
             player.setVelocityY(-330);
         }
     }
-    }
 });
