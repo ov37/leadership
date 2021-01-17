@@ -61,7 +61,11 @@ var SceneOne = new Phaser.Class({
          this.time.addEvent({
             delay: 2000,
             loop: false,
-            callback: pauseAnim(player)
+            callback: () => {
+                player.setVelocityX(0);
+
+                player.anims.play('turn');
+            }
         })
         
     },
