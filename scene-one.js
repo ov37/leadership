@@ -59,7 +59,7 @@ var SceneOne = new Phaser.Class({
          this.time.addEvent({
             delay: 2000,
             loop: false,
-            callback: pauseAnim;
+            callback: pauseAnim
             }
         })
         
