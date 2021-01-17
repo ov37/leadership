@@ -12,7 +12,7 @@ var SceneOne = new Phaser.Class({
             "Hello World", 
             {
                 fontSize: 50,
-                color: "#000000",
+                color: "#ffffff",
                 fontStyle: "bold"
             }
         ).setOrigin(0.5);
