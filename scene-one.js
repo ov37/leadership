@@ -7,15 +7,15 @@ var SceneOne = new Phaser.Class({
     preload: function() {},
     create: function() {
         var text = this.add.text(
-            640, 
-            360, 
-            "Hello World", 
+            400, 
+            300, 
+            "Meet Owen", 
             {
                 fontSize: 50,
                 color: "#ffffff",
                 fontStyle: "bold"
             }
-        ).setOrigin(0.5);
+        );//.setOrigin(0.5);
     },
     update: function() {}
 });
