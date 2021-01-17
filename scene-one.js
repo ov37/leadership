@@ -55,6 +55,7 @@ var SceneOne = new Phaser.Class({
                 fontStyle: "bold"
             }
         );
+        */
         var text2 = this.add.text(
             50, 
             200, 
@@ -65,7 +66,7 @@ var SceneOne = new Phaser.Class({
                 fontStyle: "bold"
             }
         );
-        */
+        
         var s2 = `[color=red]red[/color]
             [color=blue]blue[/color]
 [color=green]green[/color]
