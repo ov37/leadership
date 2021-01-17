@@ -44,7 +44,7 @@ var SceneOne = new Phaser.Class({
         });
         
         this.physics.add.collider(player, platforms);
-        /*
+        
         var text = this.add.text(
             250, 
             50, 
@@ -55,7 +55,7 @@ var SceneOne = new Phaser.Class({
                 fontStyle: "bold"
             }
         );
-        */
+        
         var text2 = this.add.text(
             50, 
             200, 
