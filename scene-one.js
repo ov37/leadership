@@ -9,6 +9,12 @@ var SceneOne = new Phaser.Class({
     preload: function() {
         this.load.image('ground', 'assets/platform.png');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
+        
+        var url;
+  
+         url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js';
+
+        this.load.plugin('rexbbcodetextplugin', url, true);
     },
     create: function() {
         
@@ -55,16 +61,18 @@ var SceneOne = new Phaser.Class({
         );
         var text2 = this.add.text(
             50, 
-            100, 
+            200, 
             "Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start...\n\nI heard about this Cornell Engineering Leadership Certification Program - Do you think that is a good place to start?", 
             {
-                fontSize: 50,
+                fontSize: 25,
                 color: "#ffffff",
                 fontStyle: "bold"
             }
         );
         
-        text2.addColor('#ffff00', 16);
+        var s1 = '123456[color=blue]AA[/color]\nBB';
+        var text3 = this.add.rexBBCodeText(50, 300, s1,
+        
         
         player.setVelocityX(100);
 
