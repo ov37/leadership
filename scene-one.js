@@ -71,7 +71,7 @@ var SceneOne = new Phaser.Class({
         );
         
         var s1 = '123456[color=blue]AA[/color]\nBB';
-        var text3 = this.add.rexBBCodeText(50, 300, s1,
+        var text3 = this.add.rexBBCodeText(50, 300, s1);
         
         
         player.setVelocityX(100);
