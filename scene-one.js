@@ -44,7 +44,7 @@ var SceneOne = new Phaser.Class({
         this.physics.add.collider(player, platforms);
         
         var text = this.add.text(
-            50, 
+            250, 
             50, 
             "Meet Owen", 
             {
@@ -52,7 +52,19 @@ var SceneOne = new Phaser.Class({
                 color: "#ffffff",
                 fontStyle: "bold"
             }
-        );//.setOrigin(0.5);
+        );
+        var text2 = this.add.text(
+            50, 
+            100, 
+            "Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start...\n\nI heard about this Cornell Engineering Leadership Certification Program - Do you think that is a good place to start?", 
+            {
+                fontSize: 50,
+                color: "#ffffff",
+                fontStyle: "bold"
+            }
+        );
+        
+        text2.addColor('#ffff00', 16);
         
         player.setVelocityX(100);
 
