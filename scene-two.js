@@ -47,23 +47,28 @@ var SceneTwo = new Phaser.Class({
         this.physics.add.collider(player, platforms);
         
         var typeConfig = {
-            speed: 0.1 * 1000,
-            typeMode: 'right-to-left' // 'left-to-right', 'right-to-left', 'middle-to-sides', 'sides-to-middle'
+            speed: 0.2 * 1000,
+            typeMode: 'left-to-right' // 'left-to-right', 'right-to-left', 'middle-to-sides', 'sides-to-middle'
         }
         
-        var bbcodetext = this.add.rexBBCodeText(100, 100, '', { backgroundColor: '#555', fontSize: '30px'} );
-        bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('[color=blue]Phaser3[/color] is [color=yellow]awesome[/color]');
+        player.setVelocityX(100);
+
+        player.anims.play('right', true);
         
-        var text = this.add.text(
-            250, 
-            50, 
-            "Meet Owen", 
-            {
-                fontSize: 50,
-                color: "#ffffff",
-                fontStyle: "bold"
+        this.time.addEvent({
+            delay: 2000,
+            loop: false,
+            callback: () => {
+                player.setVelocityX(0);
+
+                player.anims.play('turn');
+        
+                var bbcodetext = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px'} );
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Whoa! Who are you???');
             }
-        );
+        });
+        
+        
         
     },
     update: function() {}
