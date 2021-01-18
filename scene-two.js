@@ -8,6 +8,8 @@ var SceneTwo = new Phaser.Class({
     init: function() {},
     preload: function() {
         this.load.image('ground', 'assets/platform.png');
+        this.load.image('erica', 'assets/erica.png');
+        this.load.image('rob', 'assets/rob.png');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
         this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
         this.load.plugin('rextexttypingplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttypingplugin.min.js', true);
@@ -15,9 +17,13 @@ var SceneTwo = new Phaser.Class({
     },
     create: function() {
         
+        
         platforms = this.physics.add.staticGroup();
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+        
+        this.add.image(400, 300, 'erica').setScale(25);
+        this.add.image(600, 300, 'rob').setScale(.25);
         
         player = this.physics.add.sprite(-50, 490, 'dude');
         player.setScale(0.2);
@@ -47,7 +53,7 @@ var SceneTwo = new Phaser.Class({
         this.physics.add.collider(player, platforms);
         
         var typeConfig = {
-            speed: 0.2 * 1000,
+            speed: 0.4 * 1000,
             typeMode: 'left-to-right' // 'left-to-right', 'right-to-left', 'middle-to-sides', 'sides-to-middle'
         }
         
