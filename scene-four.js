@@ -8,6 +8,8 @@ var bbcodetext;
 var typeConfig;
 var avoidance;
 
+var state = 0;
+
 var SceneFour = new Phaser.Class({
     Extends: Phaser.Scene,
     initialize: function() {
@@ -115,7 +117,7 @@ var SceneFour = new Phaser.Class({
         
         
         this.time.addEvent({
-            delay: 27000,
+            delay: 29000,
             loop: false,
             callback: () => {
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the SPACE BAR to be aware of your tendency to compromise and instead promote discussion and giving critical feedback!');
@@ -129,10 +131,20 @@ var SceneFour = new Phaser.Class({
     },
     update: function() {
         
-        if (cursors.space.isDown)
+        if (cursors.space.isDown && state == 0)
         {
+           state = 1;
            avoidance.visible = false;
-           bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated [color=green][b]AVOIDANCE[/b][/color]. You still have one more [color=green][b]DERAILER[/b][/color] left and you are going to need all the help you can get ...\nHere ... Take the [color=purple][b]National Society of Professional Engineers Code of Ethics![/b][/color]. I heard you are particulary guided by [color=red][b]engineers shall not decieve their clients, employer or public[/b][/color] as well as[color=red][b]engineers shuld strive to serve the public interesto[/b][/color].');
+           bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated [color=green][b]AVOIDANCE[/b][/color]. You still have one more [color=green][b]DERAILER[/b][/color] left and you are going to need all the help you can get.');
+           this.time.addEvent({
+            delay: 12000,
+            loop: false,
+            callback: () => {
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Here ... Take the [color=purple][b]National Society of Professional Engineers Code of Ethics![/b][/color]. I heard you are particulary guided by [color=red][b]engineers shall not decieve their clients, employer or public[/b][/color] as well as[color=red][b]engineers shuld strive to serve the public interesto[/b][/color].');
+            }
+        });
+        
+        
         }
     }
 });
