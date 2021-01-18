@@ -2,6 +2,7 @@
 <html>
     <head>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.52.0/dist/phaser.js"></script>
+        <script src="scene-three.js"></script>
         <script src="scene-two.js"></script>
         <script src="scene-one.js"></script>
         <script src="title-scene.js"></script>
@@ -23,7 +24,7 @@
                         debug: false
                     }
                 },
-                scene: [ SceneTwo ]
+                scene: [ SceneTwo, SceneThree ]
             };
 
             const game = new Phaser.Game(phaserConfig);
