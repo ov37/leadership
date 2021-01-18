@@ -171,14 +171,14 @@ var SceneFour = new Phaser.Class({
         {
             state = 2;
             bill.visible = false;
-            bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated your [color=green][b]INNER CRITIC[/b][/color]! You have completed your quest to become a better engineering leader! What are you going to do with all these skills and who are you going to be?');
+            bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated your [color=green][b]INNER CRITIC[/b][/color]! You have completed your quest to become a better engineering leader! What are you going to do with all these skills and who are you going to strive to be?');
             this.time.addEvent({
             delay: 12000,
             loop: false,
             callback: () => {
                 stars = this.add.image(400, 300, 'stars');
                 bbcodetext2 = this.add.rexBBCodeText(20, 50, '', { fontSize: '25px', wrap: { mode: 'word', width: 780 } } );
-                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('My [color=red][b]professional goals[/b][/color] are to obtain one or more Masters degrees, work for an environmental or health sensing company, become an embedded systems team lead on project from design to manufacturing, and change careers at least once.\n\nMy [color=red][b]personal goals[/b][/color] are to move to the west coast, live abroad temporarily, and own a small sustainable farm or restaurant to serve as a community center.\n\nI [color=red][b]strive to be[/b][/color] an engineering leader who is known for a big heart, a lot of laughs, and creating technologies that make a difference in peoples everyday lives.\n\n Thank You Erica and Rob. Game Over.');
+                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('My [color=red][b]professional goals[/b][/color] are to obtain one or more Masters degrees, work for an environmental or health sensing company, become an embedded systems team lead on project from design to manufacturing, and change careers at least once.\n\nMy [color=red][b]personal goals[/b][/color] are to move to the west coast, live abroad temporarily, and own a small sustainable farm or restaurant to serve as a community center.\n\nI [color=red][b]strive to be[/b][/color] an engineering leader that uses my generosity and empathy to make a lasting impact on people\' lives around me and inspires people to live a more connected and communal life.\n\n Thank You Erica and Rob. Game Over.');
             }
         });
             
