@@ -1,4 +1,7 @@
 var player;
+var cursors;
+var stars;
+var bbcodetext5;
 
 var SceneTwo = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -67,7 +70,8 @@ var SceneTwo = new Phaser.Class({
         var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         var bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
 
-        
+        cursors = this.input.keyboard.createCursorKeys();
+
 
         
         this.time.addEvent({
@@ -115,8 +119,9 @@ var SceneTwo = new Phaser.Class({
             delay: 16000,
             loop: false,
             callback: () => {
-                var stars = this.add.image(400, 300, 'stars');
-                var bbcodetext5 = this.add.rexBBCodeText(20, 50, '', { fontSize: '25px', wrap: { mode: 'word', width: 780 } } );
+                stars = this.add.image(400, 300, 'stars');
+                typing.setTypeSpeed(0.01 * 1000,);
+                bbcodetext5 = this.add.rexBBCodeText(20, 50, '', { fontSize: '25px', wrap: { mode: 'word', width: 780 } } );
 
                 bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('My first core value is [color=red][b]being present[/b][/color]. I pay close attention to my surroundings and the implicit and explicit emotions of my teamates. I value flexibility and diverse ideas and am always open to changing plans. I think about how to maximize today without minimizing the future.\n\nAnother core value of mine is [color=red][b]helping others[/b][/color]. I want to be a leader people can count on and feel safe around. I desire person-to-person interactions and direct impact rather than a broad or abstract reach. People’s emotional and mental health are more important and have more weight on my decision making than productivity or cost.\n\nMy [color=red][b]purpose[/b][/color] is to provide connection and security to those who feel alone.');
                 
@@ -124,8 +129,7 @@ var SceneTwo = new Phaser.Class({
                     delay: 35000,
                     loop: false,
                     callback: () => {
-                        stars.visible = false;
-                        bbcodetext5.visible = false;
+                        bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('Press space');
                     }
                 });
             }
@@ -133,5 +137,11 @@ var SceneTwo = new Phaser.Class({
         
         
     },
-    update: function() {}
+    update: function() {
+        if (cursors.left.isDown)
+        {
+            stars.visible = false;
+            bbcodetext5.visible = false;
+        }
+    }
 });
