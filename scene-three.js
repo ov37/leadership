@@ -144,7 +144,7 @@ var SceneThree = new Phaser.Class({
                     delay: 4000,
                     loop: false,
                     callback: () => {
-                        //this.scene.start("SceneTwo");
+                        this.scene.start("SceneFour");
                     }
             })
             }
