@@ -19,7 +19,7 @@ var SceneThree = new Phaser.Class({
         this.load.image('ground', 'assets/platform.png');
         //this.load.image('star', 'assets/star.png');
         this.load.image('star', 'assets/squirrel.png');
-        this.load.image('wood', 'assets/wood.jpg');
+        this.load.image('wood', 'assets/sign.jpg');
         this.load.image('bomb', 'assets/bomb.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
@@ -109,6 +109,13 @@ var SceneThree = new Phaser.Class({
         {
             player.setVelocityY(-330);
         }
+        
+        if (cursors.space.isDown && paused)
+        {
+            wood.visible= false;
+            text.visible = false;
+            paused = 0;
+        }
     }
 });
 
@@ -130,6 +137,7 @@ function collectStar (player, star)
                 fontStyle: "bold"
             }
         );
+        /*
         this.time.addEvent({
                 delay: 3000,
                 loop: false,
@@ -138,7 +146,7 @@ function collectStar (player, star)
                    text.visible = false;
                    paused = 0;
                 }
-            })
+            })*/
         
         
         score += 10;
