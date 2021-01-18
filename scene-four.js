@@ -5,6 +5,7 @@ var erica;
 var rob;
 
 var bbcodetext;
+var bbcodetext2;
 var typeConfig;
 var avoidance;
 var bill;
@@ -76,7 +77,7 @@ var SceneFour = new Phaser.Class({
         player.anims.play('right', true);
         
         bbcodetext = this.add.rexBBCodeText(20, 30, '', { fontSize: '20px', wrap: { mode: 'word', width: 785 }} );
-        var bbcodetext2 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
+        bbcodetext2 = this.add.rexBBCodeText(20, 50, '', { fontSize: '25px', wrap: { mode: 'word', width: 780 } } );
         var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
 
@@ -142,7 +143,7 @@ var SceneFour = new Phaser.Class({
         });
             
             this.time.addEvent({
-            delay: 23000,
+            delay: 25000,
             loop: false,
             callback: () => {
                 bill = this.add.image(650, 450, 'bill').setScale(1.5);
@@ -150,7 +151,7 @@ var SceneFour = new Phaser.Class({
         });
             
             this.time.addEvent({
-            delay: 25000,
+            delay: 27000,
             loop: false,
             callback: () => {
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Oh no! The last [color=green][b]DERAILER[/b][/color] is here! This is your [color=green][b]INNER CRITIC[/b][/color]! He is the little voice in your head that downplays your contributions to the team and constantly tells you how worthless you are. When you listen to your [color=green][b]INNER CRITIC[/b][/color] it is impossible to lead effectively and you isolate yourself.');
@@ -158,10 +159,10 @@ var SceneFour = new Phaser.Class({
         });
             
             this.time.addEvent({
-            delay: 39000,
+            delay: 44000,
             loop: false,
             callback: () => {
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the SPACE BAR to remind yourself of your strenghts, self-worth, and acomplishments in order to prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the RIGHT ARROW KEY to remind yourself of your strenghts, self-worth, and acomplishments in order to prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
             }
         });
             state = 1;
@@ -172,6 +173,15 @@ var SceneFour = new Phaser.Class({
             state = 2;
             bill.visible = false;
             bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated your [color=green][b]INNER CRITIC[/b][/color]! You have completed your quest to become a better engineering leader! What are you going to do with all these skills and who are you going to be?');
+            this.time.addEvent({
+            delay: 15000,
+            loop: false,
+            callback: () => {
+                stars = this.add.image(400, 300, 'stars');
+                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('My [color=red][b]professional goals[/b][/color] are to obtain one or more Masters degrees, work for an environmental or health sensing company, become an embedded systems team lead on project from design to manufacturing, and change careers at least once.\n\n My [color=red][b]personal goals[/b][/color] are personal goals are to move to the west coast, live abroad temporarily, and own a small sustainable farm or restaurant to serve as a community center.\n\n I [color=red][b]strive to be[/b][/color] an engineering leader who is known for a big heart, a lot of laughs, and creating technologies that make a difference in peoples everyday lives.');
+            }
+        });
+            
         }
     }
 });
