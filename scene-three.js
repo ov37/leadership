@@ -7,6 +7,7 @@ var player;
 
 var wood;
 var paused = 0;
+var text;
 
 var SceneThree = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -19,7 +20,7 @@ var SceneThree = new Phaser.Class({
         this.load.image('ground', 'assets/platform.png');
         //this.load.image('star', 'assets/star.png');
         this.load.image('star', 'assets/squirrel.png');
-        this.load.image('wood', 'assets/sign.jpg');
+        this.load.image('wood', 'assets/sign.png');
         this.load.image('bomb', 'assets/bomb.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
@@ -127,7 +128,7 @@ function collectStar (player, star)
         wood.displayWidth = 450;
         wood.displayHeight = 250;
         paused = 1;
-        var text = this.add.text(
+        text = this.add.text(
             250, 
             300, 
             "Meet Owen", 
