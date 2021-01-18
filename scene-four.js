@@ -19,6 +19,7 @@ var SceneFour = new Phaser.Class({
         this.load.image('erica', 'assets/erica.png');
         this.load.image('rob', 'assets/rob.png');
         this.load.image('stars', 'assets/stars.jpg');
+        this.load.image('avoidance', 'assets/avoidance.jpg');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
         this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
         this.load.plugin('rextexttypingplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttypingplugin.min.js', true);
@@ -31,8 +32,8 @@ var SceneFour = new Phaser.Class({
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         
-        erica = this.add.image(475, 460, 'erica').setScale(.25);
-        rob = this.add.image(650, 460, 'rob').setScale(.25);
+        erica = this.add.image(225, 160, 'erica').setScale(.25);
+        rob = this.add.image(400, 160, 'rob').setScale(.25);
         
         player = this.physics.add.sprite(-50, 490, 'dude');
         player.setScale(0.2);
@@ -70,7 +71,7 @@ var SceneFour = new Phaser.Class({
 
         player.anims.play('right', true);
         
-        var bbcodetext = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
+        var bbcodetext = this.add.rexBBCodeText(50, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 500 }} );
         var bbcodetext2 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
         var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
@@ -79,34 +80,28 @@ var SceneFour = new Phaser.Class({
 
 
         
+        
+        
+        
         this.time.addEvent({
             delay: 2000,
             loop: false,
             callback: () => {
                 player.setVelocityX(0);
-
                 player.anims.play('turn');
         
-                
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Whoa! Who are you???');
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Wow! Owen is are already back! Good job! Now that you know your [color=red][b]unique strenghts[/b][/color] and [color=red][b]type[/b][/color] as well as  some [color=red][b]teamwork skills[/b][/color], you are ready to face the dreaded [color=green][b]DERAILERS[/b][/color].');
             }
         });
-        
-        this.time.addEvent({
-            delay: 3000,
-            loop: false,
-            callback: () => {
-                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('We are the people that will help guide you through this leadership journey of yours...\nCall us your ... [color=green][b]INSTRUCTORS![/b][/color]');
-            }
-        });
-        
         
         this.time.addEvent({
             delay: 10000,
             loop: false,
             callback: () => {
-                bbcodetext2.visible = false;
-                bbcodetext4.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext4, typeConfig).start('What can you tell us about yourself?');
+                player.setVelocityX(0);
+                player.anims.play('turn');
+        
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Wow! Owen is are already back! Good job! Now that you know your [color=red][b]unique strenghts[/b][/color] and [color=red][b]type[/b][/color] as well as  some [color=red][b]teamwork skills[/b][/color], you are ready to face the dreaded [color=green][b]DERAILERS[/b][/color].');
             }
         });
         
@@ -114,14 +109,17 @@ var SceneFour = new Phaser.Class({
             delay: 12000,
             loop: false,
             callback: () => {
-                bbcodetext.visible = false;
-                bbcodetext3.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext3, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
+                player.setVelocityX(0);
+                player.anims.play('turn');
+        
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Oh no! Here is a [color=green][b]DERAILER[/b][/color] already! This one is called [color=green][b]AVOIDANCE[/b][/color]. If you desire harmony too much you will [color=green][b]AVOID[/b][/color] conflict. Conflict is not always bad! [color=green][b]AVOIDANCE[/b][/color] prevents serious team issues from being address and stifles the sharing of new ideas. ');
             }
         });
         
         
+        
         this.time.addEvent({
-            delay: 16000,
+            delay: 26000,
             loop: false,
             callback: () => {
                 bbcodetext3.visible = false;
@@ -167,7 +165,7 @@ var SceneFour = new Phaser.Class({
                 delay: 21000,
                 loop: false,
                 callback: () => {
-                    this.scene.start("SceneThree");
+                    //this.scene.start("SceneThree");
                 }
             })
         
