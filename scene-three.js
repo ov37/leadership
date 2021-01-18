@@ -8,6 +8,7 @@ var player;
 var wood;
 var paused = 0;
 var text;
+var count = 0;
 
 var SceneThree = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -41,6 +42,17 @@ var SceneThree = new Phaser.Class({
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
         
+        var texttop = this.add.text(
+            250, 
+            20, 
+            "Use the arrow keys to move", 
+            {
+                fontSize: 40,
+                color: "#ffffff",
+                fontStyle: "bold"
+            }
+        );
+        
          this.anims.create({
             key: 'left',
             frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 4 }),
@@ -65,8 +77,8 @@ var SceneThree = new Phaser.Class({
        
        stars = this.physics.add.group({
             key: 'star',
-            repeat: 11,
-            setXY: { x: 25, y: 0, stepX: 120 },
+            repeat: 5,
+            setXY: { x: 75, y: 0, stepX: 120 },
             setScale: { x: .15, y: .15 }
         });
 
@@ -78,7 +90,7 @@ var SceneThree = new Phaser.Class({
         });
 
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-        
+        scoreText.visible = false;
         
 
         this.physics.add.collider(player, platforms);
@@ -114,7 +126,7 @@ var SceneThree = new Phaser.Class({
         if (cursors.space.isDown && paused)
         {
             wood.visible= false;
-            text.visible = false;
+            scoreText.visible = false;
             paused = 0;
         }
     }
@@ -125,31 +137,34 @@ function collectStar (player, star)
         star.disableBody(true, true);
         
         wood = this.add.image(400, 400, 'wood');
-        wood.displayWidth = 500;
+        wood.displayWidth = 50;
         wood.displayHeight = 400;
+        scoreText.visible = True;
         paused = 1;
-        text = this.add.text(
-            250, 
-            300, 
-            "Meet Owen", 
-            {
-                fontSize: 30,
-                color: "#ffffff",
-                fontStyle: "bold"
-            }
-        );
-        /*
-        this.time.addEvent({
-                delay: 3000,
-                loop: false,
-                callback: () => {
-                   wood.visible= false;
-                   text.visible = false;
-                   paused = 0;
-                }
-            })*/
-        
-        
-        score += 10;
-        scoreText.setText('Score: ' + score);
+
+        if(count == 0){
+            scoreText.setText('Score: ' + 1);
+            count++;
+        }
+        else if(count == 1){
+            scoreText.setText('Score: ' + 2);
+            count++;
+        }
+        else if(count == 2){
+            scoreText.setText('Score: ' + 3);
+            count++;
+        }
+        else if(count == 3){
+            scoreText.setText('Score: ' + 4);
+            count++;
+        }
+        else if(count == 4){
+            scoreText.setText('Score: ' + 5);
+            count++;
+        }
+        else if(count == 5){
+            scoreText.setText('Score: ' + 6);
+            count++;
+        }
+
     }
