@@ -167,7 +167,7 @@ var SceneFour = new Phaser.Class({
             state = 1;
         }
         
-        else if (cursors.space.isDown && state == 1)
+        else if (cursors.right.isDown)
         {
             state = 2;
             bill.visible = false;
