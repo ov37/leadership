@@ -6,6 +6,7 @@ var player;
     var scoreText;
 
 var wood;
+var paused = 0;
 
 var SceneThree = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -85,13 +86,13 @@ var SceneThree = new Phaser.Class({
         this.physics.add.overlap(player, stars, collectStar, null, this);
     },
     update: function() {
-         if (cursors.left.isDown)
+         if (cursors.left.isDown && !paused)
         {
             player.setVelocityX(-160);
 
             player.anims.play('left', true);
         }
-        else if (cursors.right.isDown)
+        else if (cursors.right.isDown && !paused)
         {
             player.setVelocityX(160);
 
@@ -104,7 +105,7 @@ var SceneThree = new Phaser.Class({
             player.anims.play('turn');
         }
 
-        if (cursors.up.isDown && player.body.touching.down)
+        if (cursors.up.isDown && player.body.touching.down && !paused)
         {
             player.setVelocityY(-330);
         }
@@ -118,6 +119,7 @@ function collectStar (player, star)
         wood = this.add.image(400, 300, 'wood');
         wood.displayWidth = 450;
         wood.displayHeight = 250;
+        paused = 1;
         var text = this.add.text(
             250, 
             300, 
@@ -134,6 +136,7 @@ function collectStar (player, star)
                 callback: () => {
                    wood.visible= false;
                    text.visible = false;
+                   paused = 0;
                 }
             })
         
