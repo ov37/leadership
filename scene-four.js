@@ -89,7 +89,7 @@ var SceneFour = new Phaser.Class({
                 player.setVelocityX(0);
                 player.anims.play('turn');
         
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Wow! Owen is are already back! Good job! Now that you know your [color=red][b]unique strenghts[/b][/color] and [color=red][b]type[/b][/color] as well as some [color=red][b]teamwork skills[/b][/color], you are ready to face the dreaded [color=green][b]DERAILERS[/b][/color].');
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Wow! Owen you are already back! Good job! Now that you know your [color=red][b]unique strenghts[/b][/color] and [color=red][b]type[/b][/color] as well as some [color=red][b]teamwork skills[/b][/color], you are ready to face the dreaded [color=green][b]DERAILERS[/b][/color].');
             }
         });
         
@@ -134,7 +134,7 @@ var SceneFour = new Phaser.Class({
            avoidance.visible = false;
            bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated [color=green][b]AVOIDANCE[/b][/color]. You still have one more [color=green][b]DERAILER[/b][/color] left and you are going to need all the help you can get.');
            this.time.addEvent({
-            delay: 12000,
+            delay: 9000,
             loop: false,
             callback: () => {
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Here ... Take the [color=purple][b]National Society of Professional Engineers Code of Ethics![/b][/color]. I heard you are particulary guided by [color=red][b]engineers shall not decieve their clients, employer or public[/b][/color] as well as[color=red][b]engineers should strive to serve the public interest[/b][/color].');
@@ -145,7 +145,7 @@ var SceneFour = new Phaser.Class({
             delay: 20000,
             loop: false,
             callback: () => {
-                bill = this.add.image(600, 450, 'bill').setScale(.5);
+                bill = this.add.image(650, 450, 'bill').setScale(2);
             }
         });
             
@@ -158,7 +158,7 @@ var SceneFour = new Phaser.Class({
         });
             
             this.time.addEvent({
-            delay: 30000,
+            delay: 33000,
             loop: false,
             callback: () => {
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the SPACE BAR to remind yourself of your strenghts, self-worth, and acomplishments in order to prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
