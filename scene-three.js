@@ -154,27 +154,27 @@ function collectStar (player, star)
         }
         else if(count == 1){
              type = this.add.image(400, 280, 'harmony');
-            scoreText = this.add.text(180, 320, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 450 } });
+            scoreText = this.add.text(180, 320, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 2){
             type = this.add.image(400, 280, 'empathy');
-            scoreText = this.add.text(180, 320, ' I can sense and anticipate emotional needs of people around me. I value people feeling heard and work to ensure emotional security.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 400 } });
+            scoreText = this.add.text(180, 320, ' I can sense and anticipate emotional needs of people around me. I value people feeling heard and work to ensure emotional security.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 3){
             type = this.add.image(400, 280, 'responsibility');
-            scoreText = this.add.text(180, 320, 'I am true to my word and ethics. People know they can count on me to get tasks done.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 425 } });
+            scoreText = this.add.text(180, 320, 'I am true to my word and ethics. People know they can count on me to get tasks done.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 4){
              type = this.add.image(400, 280, 'arranger');
-            scoreText = this.add.text(180, 320, 'I am not afraid of a complex problem and enjoy managing a lot of moving variables and embracing changing and volatile environments.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 550 } });
+            scoreText = this.add.text(180, 320, 'I am not afraid of a complex problem and enjoy managing a lot of moving variables and embracing changing and volatile environments.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 5){
             type = this.add.image(400, 280, 'skills');
-            scoreText = this.add.text(180, 320, 'An assortment of skills! This includes networking, leading in the moment, giving feedback, project management, managing conflict. ', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 200 } });
+            scoreText = this.add.text(180, 320, 'An assortment of skills! This includes networking, leading in the moment, giving feedback, project management, managing conflict. ', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
 
