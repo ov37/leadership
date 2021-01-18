@@ -43,11 +43,11 @@ var SceneThree = new Phaser.Class({
         player.setCollideWorldBounds(true);
         
         var texttop = this.add.text(
-            250, 
+            100, 
             20, 
             "Use the arrow keys to move", 
             {
-                fontSize: 40,
+                fontSize: 30,
                 color: "#ffffff",
                 fontStyle: "bold"
             }
@@ -139,7 +139,7 @@ function collectStar (player, star)
         wood = this.add.image(400, 400, 'wood');
         wood.displayWidth = 50;
         wood.displayHeight = 400;
-        scoreText.visible = True;
+        scoreText.visible = true;
         paused = 1;
 
         if(count == 0){
