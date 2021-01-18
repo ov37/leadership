@@ -24,7 +24,7 @@ var SceneThree = new Phaser.Class({
         this.load.image('star', 'assets/squirrel.png');
         this.load.image('wood', 'assets/sign.png');
         this.load.image('type', 'assets/type.png');
-        this.load.image('bomb', 'assets/bomb.png');
+        this.load.image('harmony', 'assets/harmony.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
     },
@@ -45,7 +45,7 @@ var SceneThree = new Phaser.Class({
         player.setCollideWorldBounds(true);
         
         var texttop = this.add.text(
-            90, 
+            30, 
             20, 
             "Use the arrow keys to move, SPACE to close", 
             {
@@ -127,6 +127,7 @@ var SceneThree = new Phaser.Class({
         {
             wood.visible= false;
             scoreText.visible = false;
+            type.visible = false;
             paused = 0;
         }
     }
@@ -144,11 +145,12 @@ function collectStar (player, star)
 
         if(count == 0){
             type = this.add.image(400, 280, 'type');
-            scoreText = this.add.text(180, 400, ' I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '30', fill: '#ffffff', fontStyle: "bold" });
+            scoreText = this.add.text(180, 400, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '30', fill: '#ffffff' });
             count++;
         }
         else if(count == 1){
-            scoreText.setText('Score: ' + 2);
+             type = this.add.image(400, 280, 'harmony');
+            scoreText = this.add.text(180, 400, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '30', fill: '#ffffff' });
             count++;
         }
         else if(count == 2){
