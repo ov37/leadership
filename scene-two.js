@@ -63,6 +63,8 @@ var SceneTwo = new Phaser.Class({
         
         var bbcodetext = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         var bbcodetext2 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
+        var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
+        var bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
         
         this.time.addEvent({
             delay: 2000,
@@ -91,7 +93,7 @@ var SceneTwo = new Phaser.Class({
             loop: false,
             callback: () => {
                 bbcodetext2.visible = false;
-                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('What can you tell us about yourself?');
+                bbcodetext4.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext4, typeConfig).start('What can you tell us about yourself?');
             }
         });
         
@@ -100,7 +102,7 @@ var SceneTwo = new Phaser.Class({
             loop: false,
             callback: () => {
                 bbcodetext.visible = false;
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
+                bbcodetext3.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext3, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
             }
         });
         
