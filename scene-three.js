@@ -64,8 +64,8 @@ var SceneThree = new Phaser.Class({
        stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
-            setXY: { x: 12, y: 0, stepX: 150 },
-            setScale: { x: .1, y: .1 }
+            setXY: { x: 12, y: 0, stepX: 120 },
+            setScale: { x: .15, y: .15 }
         });
 
            
@@ -118,11 +118,7 @@ function collectStar (player, star)
         wood = this.add.image(400, 300, 'wood');
         wood.displayWidth = 450;
         wood.displayHeight = 250;
-        this.time.addEvent({
-                delay: 3000,
-                loop: false,
-                callback: () => {
-                   var text = this.add.text(
+        var text = this.add.text(
             250, 
             300, 
             "Meet Owen", 
@@ -132,6 +128,12 @@ function collectStar (player, star)
                 fontStyle: "bold"
             }
         );
+        this.time.addEvent({
+                delay: 3000,
+                loop: false,
+                callback: () => {
+                   wood.visible= false;
+                   text.visible = false;
                 }
             })
         
