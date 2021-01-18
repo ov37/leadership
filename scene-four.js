@@ -167,10 +167,11 @@ var SceneFour = new Phaser.Class({
             
         }
         
-        else if (cursors.space.isDown && state == 1)
+        if (cursors.space.isDown && state == 1)
         {
             state = 2;
-            bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated [color=green][b]AVOIDANCE[/b][/color]. You still have one more [color=green][b]DERAILER[/b][/color] left and you are going to need all the help you can get.');
+            bill.visible = false;
+            bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated your [color=green][b]INNER CRITIC[/b][/color]! You have completed your quest to become a better engineering leader! What are you going to do with all these skills and who are you going to be?');
         }
     }
 });
