@@ -1,6 +1,8 @@
 var player;
 var cursors;
 var stars;
+var erica;
+var rob;
 var bbcodetext5;
 var bbcodetext4;
 var typeConfig;
@@ -129,13 +131,13 @@ var SceneTwo = new Phaser.Class({
                 bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('My first core value is [color=red][b]being present[/b][/color]. I pay close attention to my surroundings and the implicit and explicit emotions of my teamates. I value flexibility and diverse ideas and am always open to changing plans. I think about how to maximize today without minimizing the future.\n\nAnother core value of mine is [color=red][b]helping others[/b][/color]. I want to be a leader people can count on and feel safe around. I desire person-to-person interactions and direct impact rather than a broad or abstract reach. People’s emotional and mental health are more important and have more weight on my decision making than productivity or cost.\n\nMy [color=red][b]purpose[/b][/color] is to provide connection and security to those who feel alone.\n\n\nPress SPACE to advance.');
                 bbcodetext5.typing.setTypeSpeed(0.01 * 1000);
 
-                this.time.addEvent({
+                /*this.time.addEvent({
                     delay: 35000,
                     loop: false,
                     callback: () => {
                         //bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('Press space');
                     }
-                });
+                });*/
             }
         });
         
@@ -146,7 +148,21 @@ var SceneTwo = new Phaser.Class({
         {
             stars.visible = false;
             bbcodetext5.visible = false;
-            bbcodetext4.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext4, typeConfig).start('Excellent start! Next, you will search for [color=red][b]unique strenghts[/b]][/color] and [color=red][b]professional skills[/b]][/color], but be careful. I hear they like to hide in the form of a certain airborne rodent...');
+            bbcodetext4.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext4, typeConfig).start('Excellent start! Next, you will search for [color=red][b]unique strenghts[/b][/color] and [color=red][b]professional skills[/b][/color], but be careful. I hear they like to hide in the form of a certain airborne rodent...');
+            this.time.addEvent({
+                    delay: 7000,
+                    loop: false,
+                    callback: () => {
+                        bbcodetext4.visible = false;
+                        erica.visible = false;
+                        rob.visible = false;
+                        player.setVelocityX(100);
+
+                        player.anims.play('right', true);
+                        
+                    }
+                });
+        
         }
     }
 });
