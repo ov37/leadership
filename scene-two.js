@@ -120,11 +120,11 @@ var SceneTwo = new Phaser.Class({
         });
         
         this.time.addEvent({
-            delay: 17000,
+            delay: 20000,
             loop: false,
             callback: () => {
                 var stars = this.add.image(400, 300, 'stars');
-                bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
+                bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('[color=red]core values[/color] and [color=red]purpose[/color].');
                 
                 this.time.addEvent({
                     delay: 3000,
