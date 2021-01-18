@@ -150,7 +150,7 @@ var SceneTwo = new Phaser.Class({
             bbcodetext5.visible = false;
             bbcodetext4.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext4, typeConfig).start('Excellent start! Next, you will search for [color=red][b]unique strenghts[/b][/color] and [color=red][b]professional skills[/b][/color], but be careful. I hear they like to hide in the form of a certain airborne rodent...');
             this.time.addEvent({
-                    delay: 7000,
+                    delay: 12000,
                     loop: false,
                     callback: () => {
                         bbcodetext4.visible = false;
