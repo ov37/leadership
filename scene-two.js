@@ -22,8 +22,8 @@ var SceneTwo = new Phaser.Class({
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         
-        this.add.image(400, 300, 'erica').setScale(25);
-        this.add.image(600, 300, 'rob').setScale(.25);
+        this.add.image(300, 400, 'erica').setScale(.25);
+        this.add.image(500, 400, 'rob').setScale(.25);
         
         player = this.physics.add.sprite(-50, 490, 'dude');
         player.setScale(0.2);
@@ -53,7 +53,7 @@ var SceneTwo = new Phaser.Class({
         this.physics.add.collider(player, platforms);
         
         var typeConfig = {
-            speed: 0.4 * 1000,
+            speed: 0.05 * 1000,
             typeMode: 'left-to-right' // 'left-to-right', 'right-to-left', 'middle-to-sides', 'sides-to-middle'
         }
         
