@@ -145,7 +145,7 @@ function collectStar (player, star)
         if(count == 0){
             type = this.add.image(400, 280, 'type');
             scoreText = this.add.text(180, 400, ' I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '30', fill: '#ffffff', fontStyle: "bold" });
-            textTop.setText('Press SPACE to exit');
+            texttop.setText('Press SPACE to exit');
             count++;
         }
         else if(count == 1){
