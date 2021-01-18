@@ -142,15 +142,15 @@ var SceneFour = new Phaser.Class({
         });
             
             this.time.addEvent({
-            delay: 20000,
+            delay: 23000,
             loop: false,
             callback: () => {
-                bill = this.add.image(650, 450, 'bill').setScale(2);
+                bill = this.add.image(650, 450, 'bill').setScale(1.5);
             }
         });
             
             this.time.addEvent({
-            delay: 22000,
+            delay: 25000,
             loop: false,
             callback: () => {
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Oh no! The last [color=green][b]DERAILER[/b][/color] is here! This is your [color=green][b]INNER CRITIC[/b][/color]! He is the little voice in your head that downplays your contributions to the team and constantly tells you how worthless you are. When you listen to your [color=green][b]INNER CRITIC[/b][/color] it is impossible to lead effectively and you isolate yourself.');
@@ -158,15 +158,19 @@ var SceneFour = new Phaser.Class({
         });
             
             this.time.addEvent({
-            delay: 33000,
+            delay: 39000,
             loop: false,
             callback: () => {
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the SPACE BAR to remind yourself of your strenghts, self-worth, and acomplishments in order to prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
             }
         });
             
+        }
         
-        
+        else if (cursors.space.isDown && state == 1)
+        {
+            state = 2;
+            bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated [color=green][b]AVOIDANCE[/b][/color]. You still have one more [color=green][b]DERAILER[/b][/color] left and you are going to need all the help you can get.');
         }
     }
 });
