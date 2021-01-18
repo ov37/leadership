@@ -27,6 +27,8 @@ var SceneThree = new Phaser.Class({
         this.load.image('harmony', 'assets/harmony.png');
         this.load.image('empathy', 'assets/empathy.png');
         this.load.image('responsibility', 'assets/responsibility.png');
+        this.load.image('arranger', 'assets/arranger.png');
+        this.load.image('skills', 'assets/skills.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
     },
@@ -147,28 +149,32 @@ function collectStar (player, star)
 
         if(count == 0){
             type = this.add.image(400, 280, 'type');
-            scoreText = this.add.text(180, 320, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 300 } });
+            scoreText = this.add.text(180, 320, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 1){
              type = this.add.image(400, 280, 'harmony');
-            scoreText = this.add.text(180, 320, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 200 } });
+            scoreText = this.add.text(180, 320, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 450 } });
             count++;
         }
         else if(count == 2){
             type = this.add.image(400, 280, 'empathy');
+            scoreText = this.add.text(180, 320, ' I can sense and anticipate emotional needs of people around me. I value people feeling heard and work to ensure emotional security.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 400 } });
             count++;
         }
         else if(count == 3){
             type = this.add.image(400, 280, 'responsibility');
+            scoreText = this.add.text(180, 320, 'I am true to my word and ethics. People know they can count on me to get tasks done.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 425 } });
             count++;
         }
         else if(count == 4){
-            scoreText.setText('Score: ' + 5);
+             type = this.add.image(400, 280, 'arranger');
+            scoreText = this.add.text(180, 320, 'I am not afraid of a complex problem and enjoy managing a lot of moving variables and embracing changing and volatile environments.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 550 } });
             count++;
         }
         else if(count == 5){
-            scoreText.setText('Score: ' + 6);
+            type = this.add.image(400, 280, 'skills');
+            scoreText = this.add.text(180, 320, 'An assortment of skills! This includes networking, leading in the moment, giving feedback, project management, managing conflict. ', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 200 } });
             count++;
         }
 
