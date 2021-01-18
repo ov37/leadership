@@ -91,8 +91,6 @@ var SceneThree = new Phaser.Class({
 
         });
 
-        scoreText = this.add.text(125, 400, 'score: 0', { fontSize: '32px', fill: '#ffffff' });
-        scoreText.visible = false;
         
 
         this.physics.add.collider(player, platforms);
@@ -147,7 +145,7 @@ function collectStar (player, star)
 
         if(count == 0){
             type = this.add.image(400, 300, 'type');
-            scoreText.setText('Score: ' + 1);
+            scoreText = this.add.text(140, 300, 'score: 0', { fontSize: '32px', fill: '#ffffff' });
             count++;
         }
         else if(count == 1){
