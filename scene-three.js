@@ -145,12 +145,12 @@ function collectStar (player, star)
 
         if(count == 0){
             type = this.add.image(400, 280, 'type');
-            scoreText = this.add.text(180, 400, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '30', fill: '#ffffff' });
+            scoreText = this.add.text(180, 400, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '30px', fill: '#ffffff' });
             count++;
         }
         else if(count == 1){
              type = this.add.image(400, 280, 'harmony');
-            scoreText = this.add.text(180, 400, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '30', fill: '#ffffff' });
+            scoreText = this.add.text(180, 400, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '30px', fill: '#ffffff' });
             count++;
         }
         else if(count == 2){
