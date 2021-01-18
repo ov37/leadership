@@ -3,6 +3,7 @@ var cursors;
 var stars;
 var bbcodetext5;
 var bbcodetext4;
+var typeConfig;
 
 
 var SceneTwo = new Phaser.Class({
@@ -58,7 +59,7 @@ var SceneTwo = new Phaser.Class({
         
         this.physics.add.collider(player, platforms);
         
-        var typeConfig = {
+        typeConfig = {
             speed: 0.05 * 1000,
             typeMode: 'left-to-right' // 'left-to-right', 'right-to-left', 'middle-to-sides', 'sides-to-middle'
         }
