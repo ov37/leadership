@@ -25,6 +25,8 @@ var SceneThree = new Phaser.Class({
         this.load.image('wood', 'assets/sign.png');
         this.load.image('type', 'assets/type.png');
         this.load.image('harmony', 'assets/harmony.png');
+        this.load.image('empathy', 'assets/empathy.png');
+        this.load.image('responsibility', 'assets/responsibility.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
     },
@@ -145,20 +147,20 @@ function collectStar (player, star)
 
         if(count == 0){
             type = this.add.image(400, 280, 'type');
-            scoreText = this.add.text(180, 400, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '30px', fill: '#ffffff' });
+            scoreText = this.add.text(180, 300, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold" });
             count++;
         }
         else if(count == 1){
              type = this.add.image(400, 280, 'harmony');
-            scoreText = this.add.text(180, 400, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '30px', fill: '#ffffff' });
+            scoreText = this.add.text(180, 300, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold" });
             count++;
         }
         else if(count == 2){
-            scoreText.setText('Score: ' + 3);
+            type = this.add.image(400, 280, 'empathy');
             count++;
         }
         else if(count == 3){
-            scoreText.setText('Score: ' + 4);
+            type = this.add.image(400, 280, 'responsibility');
             count++;
         }
         else if(count == 4){
