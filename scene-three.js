@@ -136,6 +136,7 @@ var SceneThree = new Phaser.Class({
                 paused = 0;
             }
             else {
+                player.setCollideWorldBounds(true);
                 player.setVelocityX(100);
 
                 player.anims.play('right', true);
