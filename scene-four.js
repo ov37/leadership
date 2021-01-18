@@ -77,7 +77,6 @@ var SceneFour = new Phaser.Class({
         player.anims.play('right', true);
         
         bbcodetext = this.add.rexBBCodeText(20, 30, '', { fontSize: '20px', wrap: { mode: 'word', width: 785 }} );
-        bbcodetext2 = this.add.rexBBCodeText(20, 50, '', { fontSize: '25px', wrap: { mode: 'word', width: 780 } } );
         var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
 
@@ -162,7 +161,7 @@ var SceneFour = new Phaser.Class({
             delay: 44000,
             loop: false,
             callback: () => {
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the RIGHT ARROW KEY to remind yourself of your strenghts and acomplishments as well as lean on those around you in order to remind yourslef of your worth and prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the RIGHT ARROW KEY to remind yourself of your strenghts and acomplishments as well as lean on those around you in order to reaffirm your worth and prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
             }
         });
             state = 1;
@@ -178,7 +177,8 @@ var SceneFour = new Phaser.Class({
             loop: false,
             callback: () => {
                 stars = this.add.image(400, 300, 'stars');
-                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('My [color=red][b]professional goals[/b][/color] are to obtain one or more Masters degrees, work for an environmental or health sensing company, become an embedded systems team lead on project from design to manufacturing, and change careers at least once.\n\n My [color=red][b]personal goals[/b][/color] are personal goals are to move to the west coast, live abroad temporarily, and own a small sustainable farm or restaurant to serve as a community center.\n\n I [color=red][b]strive to be[/b][/color] an engineering leader who is known for a big heart, a lot of laughs, and creating technologies that make a difference in peoples everyday lives.');
+                bbcodetext2 = this.add.rexBBCodeText(20, 50, '', { fontSize: '25px', wrap: { mode: 'word', width: 780 } } );
+                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('My [color=red][b]professional goals[/b][/color] are to obtain one or more Masters degrees, work for an environmental or health sensing company, become an embedded systems team lead on project from design to manufacturing, and change careers at least once.\n\n My [color=red][b]personal goals[/b][/color] are personal goals are to move to the west coast, live abroad temporarily, and own a small sustainable farm or restaurant to serve as a community center.\n\n I [color=red][b]strive to be[/b][/color] an engineering leader who is known for a big heart, a lot of laughs, and creating technologies that make a difference in peoples everyday lives.\n\n Thank You Erica and Rob. Game Over.');
             }
         });
             
