@@ -31,8 +31,8 @@ var SceneTwo = new Phaser.Class({
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         
-        this.add.image(475, 460, 'erica').setScale(.25);
-        this.add.image(650, 460, 'rob').setScale(.25);
+        erica = this.add.image(475, 460, 'erica').setScale(.25);
+        rob = this.add.image(650, 460, 'rob').setScale(.25);
         
         player = this.physics.add.sprite(-50, 490, 'dude');
         player.setScale(0.2);
@@ -150,7 +150,7 @@ var SceneTwo = new Phaser.Class({
             bbcodetext5.visible = false;
             bbcodetext4.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext4, typeConfig).start('Excellent start! Next, you will search for [color=red][b]unique strenghts[/b][/color] and [color=red][b]professional skills[/b][/color], but be careful. I hear they like to hide in the form of a certain airborne rodent...');
             this.time.addEvent({
-                    delay: 12000,
+                    delay: 10000,
                     loop: false,
                     callback: () => {
                         bbcodetext4.visible = false;
