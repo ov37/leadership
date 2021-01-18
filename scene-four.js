@@ -162,7 +162,7 @@ var SceneFour = new Phaser.Class({
             delay: 44000,
             loop: false,
             callback: () => {
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the RIGHT ARROW KEY to remind yourself of your strenghts, self-worth, and acomplishments in order to prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the RIGHT ARROW KEY to remind yourself of your strenghts and acomplishments as well as lean on those around you in order to remind yourslef of your worth and prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
             }
         });
             state = 1;
@@ -174,11 +174,11 @@ var SceneFour = new Phaser.Class({
             bill.visible = false;
             bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated your [color=green][b]INNER CRITIC[/b][/color]! You have completed your quest to become a better engineering leader! What are you going to do with all these skills and who are you going to be?');
             this.time.addEvent({
-            delay: 15000,
+            delay: 12000,
             loop: false,
             callback: () => {
                 stars = this.add.image(400, 300, 'stars');
-                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('My [color=red][b]professional goals[/b][/color] are to obtain one or more Masters degrees, work for an environmental or health sensing company, become an embedded systems team lead on project from design to manufacturing, and change careers at least once.\n\n My [color=red][b]personal goals[/b][/color] are personal goals are to move to the west coast, live abroad temporarily, and own a small sustainable farm or restaurant to serve as a community center.\n\n I [color=red][b]strive to be[/b][/color] an engineering leader who is known for a big heart, a lot of laughs, and creating technologies that make a difference in peoples everyday lives.');
+                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('My [color=red][b]professional goals[/b][/color] are to obtain one or more Masters degrees, work for an environmental or health sensing company, become an embedded systems team lead on project from design to manufacturing, and change careers at least once.\n\n My [color=red][b]personal goals[/b][/color] are personal goals are to move to the west coast, live abroad temporarily, and own a small sustainable farm or restaurant to serve as a community center.\n\n I [color=red][b]strive to be[/b][/color] an engineering leader who is known for a big heart, a lot of laughs, and creating technologies that make a difference in peoples everyday lives.');
             }
         });
             
