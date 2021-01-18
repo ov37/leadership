@@ -132,7 +132,14 @@ var SceneThree = new Phaser.Class({
             wood.visible= false;
             scoreText.visible = false;
             type.visible = false;
-            paused = 0;
+            if(count < 6) {
+                paused = 0;
+            }
+            else {
+                player.setVelocityX(100);
+
+                player.anims.play('right', true);
+            }
         }
     }
 });
@@ -154,7 +161,7 @@ function collectStar (player, star)
         }
         else if(count == 1){
              type = this.add.image(400, 280, 'harmony');
-            scoreText = this.add.text(180, 320, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
+            scoreText = this.add.text(180, 320, 'I strive to find agreement and compromise. I promote common ground and try to avoid conflict.', { fontSize: '20px', fill: '#000000', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 2){
@@ -164,7 +171,7 @@ function collectStar (player, star)
         }
         else if(count == 3){
             type = this.add.image(400, 280, 'responsibility');
-            scoreText = this.add.text(180, 320, 'I am true to my word and ethics. People know they can count on me to get tasks done.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
+            scoreText = this.add.text(180, 320, 'I am true to my word and ethics. People know they can count on me to get tasks done.', { fontSize: '20px', fill: '#000000', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 4){
@@ -174,7 +181,7 @@ function collectStar (player, star)
         }
         else if(count == 5){
             type = this.add.image(400, 280, 'skills');
-            scoreText = this.add.text(180, 320, 'An assortment of skills! This includes networking, leading in the moment, giving feedback, project management, managing conflict. ', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
+            scoreText = this.add.text(180, 320, 'An assortment of skills! This includes networking, leading in the moment, giving feedback, project management, managing conflict. ', { fontSize: '20px', fill: '#000000', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
 
