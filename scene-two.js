@@ -61,6 +61,7 @@ var SceneTwo = new Phaser.Class({
 
         player.anims.play('right', true);
         
+        var bbcodetext = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         var bbcodetext2 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
         
         this.time.addEvent({
@@ -71,7 +72,7 @@ var SceneTwo = new Phaser.Class({
 
                 player.anims.play('turn');
         
-                var bbcodetext = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px'} );
+                
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Whoa! Who are you???');
             }
         });
@@ -80,16 +81,26 @@ var SceneTwo = new Phaser.Class({
             delay: 3000,
             loop: false,
             callback: () => {
-                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('We are the people that will help guide you through this leadership journey of yours...\nCall us your ... [color=red][b]INSTRUCTORS![/b][/color]');
+                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('We are the people that will help guide you through this leadership journey of yours...\nCall us your ... [color=green][b]INSTRUCTORS![/b][/color]');
             }
         });
         
         
         this.time.addEvent({
-            delay: 6000,
+            delay: 10000,
             loop: false,
             callback: () => {
                 bbcodetext2.visible = false;
+                bbcodetext2.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext2, typeConfig).start('What can you tell us about yourself?');
+            }
+        });
+        
+        this.time.addEvent({
+            delay: 12000,
+            loop: false,
+            callback: () => {
+                bbcodetext.visible = false;
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
             }
         });
         
