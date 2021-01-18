@@ -130,7 +130,7 @@ var SceneFour = new Phaser.Class({
         
         if (cursors.space.isDown && state == 0)
         {
-           state = 1;
+           
            avoidance.visible = false;
            bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Nice! You defeated [color=green][b]AVOIDANCE[/b][/color]. You still have one more [color=green][b]DERAILER[/b][/color] left and you are going to need all the help you can get.');
            this.time.addEvent({
@@ -164,10 +164,10 @@ var SceneFour = new Phaser.Class({
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the SPACE BAR to remind yourself of your strenghts, self-worth, and acomplishments in order to prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
             }
         });
-            
+            state = 1;
         }
         
-        if (cursors.space.isDown && state == 1)
+        else if (cursors.space.isDown && state == 1)
         {
             state = 2;
             bill.visible = false;
