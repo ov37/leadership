@@ -10,6 +10,7 @@ var SceneTwo = new Phaser.Class({
         this.load.image('ground', 'assets/platform.png');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
         this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
+        this.load.plugin('rextexttypingplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttypingplugin.min.js', true);
 
     },
     create: function() {
@@ -45,6 +46,14 @@ var SceneTwo = new Phaser.Class({
         
         this.physics.add.collider(player, platforms);
         
+        var typeConfig = {
+            speed: 0.1 * 1000,
+            typeMode: 'right-to-left' // 'left-to-right', 'right-to-left', 'middle-to-sides', 'sides-to-middle'
+        }
+        
+        var bbcodetext = this.add.rexBBCodeText(100, 100, '', { backgroundColor: '#555', fontSize: '30px'} );
+        bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('[color=blue]Phaser3[/color] is [color=yellow]awesome[/color]');
+        
         var text = this.add.text(
             250, 
             50, 
@@ -56,81 +65,6 @@ var SceneTwo = new Phaser.Class({
             }
         );
         
-        
-        
-        
-        player.setVelocityX(100);
-
-        player.anims.play('right', true);
-        
-         this.time.addEvent({
-            delay: 2000,
-            loop: false,
-            callback: () => {
-                player.setVelocityX(0);
-
-                player.anims.play('turn');
-                
-                var s2 = `Hi! I'm Owen. I'm an engineering student at Cornell University looking to become a better leader. I'm kind of unsure where to start... I heard about this [color=blue][b]Cornell Engineering Leadership Certification Program[/b][/color] - Do you think that is a good place to start?`;
-
-        this.add.rexBBCodeText(50, 150, s2, {
-            fontSize: '25px',
-            wrap: {
-                mode: 'word',
-                width: 700
-            }
-        })
-            }
-        })
-        
-        this.time.addEvent({
-            delay: 15000,
-            loop: false,
-            callback: () => {
-                
-                var s3 = `[color=green][b]Yes?[/b][/color]`;
-
-            this.add.rexBBCodeText(50, 350, s3, {
-                fontSize: '25px',
-                wrap: {
-                    mode: 'word',
-                    width: 700
-                }
-            })
-                
-            }
-        })
-        
-        this.time.addEvent({
-            delay: 16000,
-            loop: false,
-            callback: () => {
-                
-                var s4 = `Great! Lets get started.`;
-
-            this.add.rexBBCodeText(50,380, s4, {
-                fontSize: '25px',
-                wrap: {
-                    mode: 'word',
-                    width: 700
-                }
-            })
-                
-            player.setVelocityX(100);
-
-            player.anims.play('right', true);
-                
-            }
-        })
-        
     },
     update: function() {}
 });
-
-
-function pauseAnim (player)
-    {
-        player.setVelocityX(0);
-
-        player.anims.play('turn');
-    }
