@@ -9,6 +9,7 @@ var wood;
 var paused = 0;
 var text;
 var count = 0;
+var type;
 
 var SceneThree = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -22,6 +23,7 @@ var SceneThree = new Phaser.Class({
         //this.load.image('star', 'assets/star.png');
         this.load.image('star', 'assets/squirrel.png');
         this.load.image('wood', 'assets/sign.png');
+        this.load.image('type', 'assets/type.png');
         this.load.image('bomb', 'assets/bomb.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
@@ -43,7 +45,7 @@ var SceneThree = new Phaser.Class({
         player.setCollideWorldBounds(true);
         
         var texttop = this.add.text(
-            100, 
+            150, 
             20, 
             "Use the arrow keys to move", 
             {
@@ -89,7 +91,7 @@ var SceneThree = new Phaser.Class({
 
         });
 
-        scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        scoreText = this.add.text(125, 400, 'score: 0', { fontSize: '32px', fill: '#ffffff' });
         scoreText.visible = false;
         
 
@@ -137,12 +139,14 @@ function collectStar (player, star)
         star.disableBody(true, true);
         
         wood = this.add.image(400, 400, 'wood');
-        wood.displayWidth = 50;
+        wood.displayWidth = 500;
         wood.displayHeight = 400;
+        
         scoreText.visible = true;
         paused = 1;
 
         if(count == 0){
+            type = this.add.image(400, 300, 'type');
             scoreText.setText('Score: ' + 1);
             count++;
         }
