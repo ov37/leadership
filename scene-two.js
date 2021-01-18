@@ -22,8 +22,8 @@ var SceneTwo = new Phaser.Class({
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         
-        this.add.image(300, 400, 'erica').setScale(.25);
-        this.add.image(500, 400, 'rob').setScale(.25);
+        this.add.image(475, 500, 'erica').setScale(.25);
+        this.add.image(650, 500, 'rob').setScale(.25);
         
         player = this.physics.add.sprite(-50, 490, 'dude');
         player.setScale(0.2);
@@ -71,6 +71,16 @@ var SceneTwo = new Phaser.Class({
         
                 var bbcodetext = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px'} );
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Whoa! Who are you???');
+            }
+        });
+        
+        this.time.addEvent({
+            delay: 3000,
+            loop: false,
+            callback: () => {
+        
+                var bbcodetext2 = this.add.rexBBCodeText(450, 250, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 } } );
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('We are the people that will help guide you through this leadership journey of yours...\nCall us your ... [color=red][b]INSTRUCTORS[/b][/color]');
             }
         });
         
