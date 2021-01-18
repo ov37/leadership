@@ -19,7 +19,7 @@ var SceneFour = new Phaser.Class({
         this.load.image('erica', 'assets/erica.png');
         this.load.image('rob', 'assets/rob.png');
         this.load.image('stars', 'assets/stars.jpg');
-        this.load.image('avoidance', 'assets/avoidance.jpg');
+        this.load.image('avoidance', 'assets/avoidance.png');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
         this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
         this.load.plugin('rextexttypingplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttypingplugin.min.js', true);
@@ -71,7 +71,7 @@ var SceneFour = new Phaser.Class({
 
         player.anims.play('right', true);
         
-        var bbcodetext = this.add.rexBBCodeText(20, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 580 }} );
+        var bbcodetext = this.add.rexBBCodeText(20, 30, '', { fontSize: '20px', wrap: { mode: 'word', width: 700 }} );
         var bbcodetext2 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
         var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
@@ -96,7 +96,7 @@ var SceneFour = new Phaser.Class({
         
 
         this.time.addEvent({
-            delay: 15000,
+            delay: 13000,
             loop: false,
             callback: () => {
                 avoidance = this.add.image(600, 500, 'avoidance').setScale(.5);
@@ -116,7 +116,7 @@ var SceneFour = new Phaser.Class({
         
         
         this.time.addEvent({
-            delay: 26000,
+            delay: 46000,
             loop: false,
             callback: () => {
                 bbcodetext3.visible = false;
@@ -139,33 +139,6 @@ var SceneFour = new Phaser.Class({
         
     },
     update: function() {
-        if (cursors.space.isDown)
-        {
-            stars.visible = false;
-            bbcodetext5.visible = false;
-            bbcodetext4.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext4, typeConfig).start('Excellent start! Next, you will search for [color=red][b]unique strenghts[/b][/color] and [color=red][b]professional skills[/b][/color], but be careful. I hear they like to hide in the form of a certain airborne rodent...');
-            this.time.addEvent({
-                    delay: 13000,
-                    loop: false,
-                    callback: () => {
-                        bbcodetext4.visible = false;
-                        erica.visible = false;
-                        rob.visible = false;
-                        player.setVelocityX(100);
-
-                        player.anims.play('right', true);
-                        
-                    }
-                });
-            
-             this.time.addEvent({
-                delay: 21000,
-                loop: false,
-                callback: () => {
-                    //this.scene.start("SceneThree");
-                }
-            })
         
-        }
     }
 });
