@@ -64,7 +64,7 @@ var SceneThree = new Phaser.Class({
        stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
-            setXY: { x: 12, y: 0, stepX: 200 },
+            setXY: { x: 12, y: 0, stepX: 120 },
             setScale: { x: .05, y: .05 }
         });
 
@@ -116,7 +116,8 @@ function collectStar (player, star)
         star.disableBody(true, true);
         
         wood = this.add.image(400, 300, 'wood');
-        //wood.displayWidth = 
+        wood.displayWidth = 200;
+        wood.displayHeight = 100;
         
         
         score += 10;
