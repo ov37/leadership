@@ -140,7 +140,6 @@ function collectStar (player, star)
         wood.displayWidth = 500;
         wood.displayHeight = 400;
         
-        scoreText.visible = true;
         paused = 1;
 
         if(count == 0){
