@@ -115,7 +115,7 @@ var SceneThree = new Phaser.Class({
 
             player.anims.play('right', true);
         }
-        else
+        else if(count <6)
         {
             player.setVelocityX(0);
 
@@ -139,6 +139,14 @@ var SceneThree = new Phaser.Class({
                 player.setVelocityX(100);
 
                 player.anims.play('right', true);
+                
+                this.time.addEvent({
+                    delay: 4000,
+                    loop: false,
+                    callback: () => {
+                        //this.scene.start("SceneTwo");
+                    }
+            })
             }
         }
     }
@@ -156,7 +164,7 @@ function collectStar (player, star)
 
         if(count == 0){
             type = this.add.image(400, 280, 'type');
-            scoreText = this.add.text(180, 320, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
+            scoreText = this.add.text(180, 320, 'I make people feel at ease and can turn an awkward tense situation into a lighthearted one.', { fontSize: '20px', fill: '#000000', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 1){
@@ -166,7 +174,7 @@ function collectStar (player, star)
         }
         else if(count == 2){
             type = this.add.image(400, 280, 'empathy');
-            scoreText = this.add.text(180, 320, ' I can sense and anticipate emotional needs of people around me. I value people feeling heard and work to ensure emotional security.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
+            scoreText = this.add.text(180, 320, ' I can sense and anticipate emotional needs of people around me. I value people feeling heard and work to ensure emotional security.', { fontSize: '20px', fill: '#000000', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 3){
@@ -176,7 +184,7 @@ function collectStar (player, star)
         }
         else if(count == 4){
              type = this.add.image(400, 280, 'arranger');
-            scoreText = this.add.text(180, 320, 'I am not afraid of a complex problem and enjoy managing a lot of moving variables and embracing changing and volatile environments.', { fontSize: '20px', fill: '#ffffff', fontStyle: "bold", wordWrap: { width: 500 } });
+            scoreText = this.add.text(180, 320, 'I am not afraid of a complex problem and enjoy managing a lot of moving variables and embracing changing and volatile environments.', { fontSize: '20px', fill: '#00000', fontStyle: "bold", wordWrap: { width: 500 } });
             count++;
         }
         else if(count == 5){
