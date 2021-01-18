@@ -116,9 +116,9 @@ var SceneTwo = new Phaser.Class({
             loop: false,
             callback: () => {
                 var stars = this.add.image(400, 300, 'stars');
-                var bbcodetext5 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
+                var bbcodetext5 = this.add.rexBBCodeText(50, 100, '', { fontSize: '30px', wrap: { mode: 'word', width: 700 } } );
 
-                bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('[color=red]core values[/color] and [color=red]purpose[/color].');
+                bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('My first core value is [color=red][b]being present[/b][/color]. I pay close attention to my surroundings and the implicit and explicit emotions of my teamates. I value flexibility and diverse ideas and am always open to changing plans. I think about how to maximize today without minimizing the future.');
                 
                 this.time.addEvent({
                     delay: 5000,
