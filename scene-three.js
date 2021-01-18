@@ -5,6 +5,8 @@ var player;
     var score = 0;
     var scoreText;
 
+var wood;
+
 var SceneThree = new Phaser.Class({
     Extends: Phaser.Scene,
     initialize: function() {
@@ -16,6 +18,7 @@ var SceneThree = new Phaser.Class({
         this.load.image('ground', 'assets/platform.png');
         //this.load.image('star', 'assets/star.png');
         this.load.image('star', 'assets/squirrel.png');
+        this.load.image('wood', 'assets/wood.jpg');
         this.load.image('bomb', 'assets/bomb.png');
         //this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
@@ -111,7 +114,11 @@ var SceneThree = new Phaser.Class({
 function collectStar (player, star)
     {
         star.disableBody(true, true);
-
+        
+        wood = this.add.image(400, 300, 'wood');
+        //wood.displayWidth = 
+        
+        
         score += 10;
         scoreText.setText('Score: ' + score);
     }
