@@ -7,6 +7,7 @@ var rob;
 var bbcodetext;
 var typeConfig;
 var avoidance;
+var bill;
 
 var state = 0;
 
@@ -22,6 +23,7 @@ var SceneFour = new Phaser.Class({
         this.load.image('rob', 'assets/rob.png');
         this.load.image('stars', 'assets/stars.jpg');
         this.load.image('avoidance', 'assets/avoidance.png');
+        this.load.image('bill', 'assets/bill.png');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
         this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
         this.load.plugin('rextexttypingplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttypingplugin.min.js', true);
@@ -79,11 +81,6 @@ var SceneFour = new Phaser.Class({
         bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
 
         cursors = this.input.keyboard.createCursorKeys();
-
-
-        
-        
-        
         
         this.time.addEvent({
             delay: 2000,
@@ -111,7 +108,7 @@ var SceneFour = new Phaser.Class({
             loop: false,
             callback: () => {
 
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Oh no! Here is a [color=green][b]DERAILER[/b][/color] already! This one is called [color=green][b]AVOIDANCE[/b][/color]. If you desire harmony too much you will [color=green][b]AVOID[/b][/color] conflict. Conflict is not always bad! [color=green][b]AVOIDANCE[/b][/color] prevents serious team issues from being address and stifles the sharing of new ideas. ');
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Oh no! Here is a [color=green][b]DERAILER[/b][/color] already! This one is called [color=green][b]AVOIDANCE[/b][/color]. If you desire harmony too much you will [color=green][b]AVOID[/b][/color] conflict. Conflict is not always bad! [color=green][b]AVOIDANCE[/b][/color] prevents serious team issues from being addressed and stifles the sharing of new ideas. ');
             }
         });
         
@@ -140,9 +137,34 @@ var SceneFour = new Phaser.Class({
             delay: 12000,
             loop: false,
             callback: () => {
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Here ... Take the [color=purple][b]National Society of Professional Engineers Code of Ethics![/b][/color]. I heard you are particulary guided by [color=red][b]engineers shall not decieve their clients, employer or public[/b][/color] as well as[color=red][b]engineers shuld strive to serve the public interesto[/b][/color].');
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Here ... Take the [color=purple][b]National Society of Professional Engineers Code of Ethics![/b][/color]. I heard you are particulary guided by [color=red][b]engineers shall not decieve their clients, employer or public[/b][/color] as well as[color=red][b]engineers should strive to serve the public interest[/b][/color].');
             }
         });
+            
+            this.time.addEvent({
+            delay: 20000,
+            loop: false,
+            callback: () => {
+                bill = this.add.image(600, 450, 'bill').setScale(.5);
+            }
+        });
+            
+            this.time.addEvent({
+            delay: 22000,
+            loop: false,
+            callback: () => {
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Oh no! The last [color=green][b]DERAILER[/b][/color] is here! This is your [color=green][b]INNER CRITIC[/b][/color]! He is the little voice in your head that downplays your contributions to the team and constantly tells you how worthless you are. When you listen to your [color=green][b]INNER CRITIC[/b][/color] it is impossible to lead effectively and you isolate yourself.');
+            }
+        });
+            
+            this.time.addEvent({
+            delay: 30000,
+            loop: false,
+            callback: () => {
+                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Press the SPACE BAR to remind yourself of your strenghts, self-worth, and acomplishments in order to prove your [color=green][b]INNER CRITIC[/b][/color] wrong!');
+            }
+        });
+            
         
         
         }
