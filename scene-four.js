@@ -6,7 +6,7 @@ var rob;
 var bbcodetext5;
 var bbcodetext4;
 var typeConfig;
-
+var avoidance;
 
 var SceneFour = new Phaser.Class({
     Extends: Phaser.Scene,
@@ -32,8 +32,8 @@ var SceneFour = new Phaser.Class({
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         
-        erica = this.add.image(225, 160, 'erica').setScale(.25);
-        rob = this.add.image(400, 160, 'rob').setScale(.25);
+        erica = this.add.image(275, 200, 'erica').setScale(.25);
+        rob = this.add.image(450, 200, 'rob').setScale(.25);
         
         player = this.physics.add.sprite(-50, 490, 'dude');
         player.setScale(0.2);
@@ -71,7 +71,7 @@ var SceneFour = new Phaser.Class({
 
         player.anims.play('right', true);
         
-        var bbcodetext = this.add.rexBBCodeText(50, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 500 }} );
+        var bbcodetext = this.add.rexBBCodeText(20, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 580 }} );
         var bbcodetext2 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
         var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
@@ -94,24 +94,21 @@ var SceneFour = new Phaser.Class({
             }
         });
         
+
         this.time.addEvent({
-            delay: 10000,
+            delay: 15000,
             loop: false,
             callback: () => {
-                player.setVelocityX(0);
-                player.anims.play('turn');
-        
-                bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Wow! Owen is are already back! Good job! Now that you know your [color=red][b]unique strenghts[/b][/color] and [color=red][b]type[/b][/color] as well as  some [color=red][b]teamwork skills[/b][/color], you are ready to face the dreaded [color=green][b]DERAILERS[/b][/color].');
+                avoidance = this.add.image(600, 500, 'avoidance').setScale(.5);
             }
         });
         
+        
         this.time.addEvent({
-            delay: 12000,
+            delay: 15000,
             loop: false,
             callback: () => {
-                player.setVelocityX(0);
-                player.anims.play('turn');
-        
+
                 bbcodetext.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext, typeConfig).start('Oh no! Here is a [color=green][b]DERAILER[/b][/color] already! This one is called [color=green][b]AVOIDANCE[/b][/color]. If you desire harmony too much you will [color=green][b]AVOID[/b][/color] conflict. Conflict is not always bad! [color=green][b]AVOIDANCE[/b][/color] prevents serious team issues from being address and stifles the sharing of new ideas. ');
             }
         });
