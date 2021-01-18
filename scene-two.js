@@ -10,6 +10,7 @@ var SceneTwo = new Phaser.Class({
         this.load.image('ground', 'assets/platform.png');
         this.load.image('erica', 'assets/erica.png');
         this.load.image('rob', 'assets/rob.png');
+        this.load.image('stars', 'assets/stars.jpg');
         this.load.spritesheet('dude', 'assets/charachter.png', { frameWidth: 405, frameHeight: 457 });
         this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
         this.load.plugin('rextexttypingplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttypingplugin.min.js', true);
@@ -65,6 +66,10 @@ var SceneTwo = new Phaser.Class({
         var bbcodetext2 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
         var bbcodetext3 = this.add.rexBBCodeText(100, 100, '', { fontSize: '20px', wrap: { mode: 'word', width: 300 }} );
         var bbcodetext4 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
+        var bbcodetext5 = this.add.rexBBCodeText(400, 175, '', { fontSize: '20px', wrap: { mode: 'word', width: 350 } } );
+
+        
+
         
         this.time.addEvent({
             delay: 2000,
@@ -103,6 +108,32 @@ var SceneTwo = new Phaser.Class({
             callback: () => {
                 bbcodetext.visible = false;
                 bbcodetext3.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext3, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
+            }
+        });
+        
+        this.time.addEvent({
+            delay: 15000,
+            loop: false,
+            callback: () => {
+                bbcodetext3.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext3, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
+            }
+        });
+        
+        this.time.addEvent({
+            delay: 17000,
+            loop: false,
+            callback: () => {
+                var stars = this.add.image(400, 300, 'stars');
+                bbcodetext5.typing = this.plugins.get('rextexttypingplugin').add(bbcodetext5, typeConfig).start('Well... I can tell you about my [color=red]core values[/color] and [color=red]purpose[/color].');
+                
+                this.time.addEvent({
+                    delay: 3000,
+                    loop: false,
+                    callback: () => {
+                        stars.visible = false;
+                        bbcodetext5.visible = false;
+                    }
+                });
             }
         });
         
